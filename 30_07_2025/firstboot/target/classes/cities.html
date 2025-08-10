@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Cities in India</title>
+</head>
+<body>
+    <h2>Cities in India:</h2>
+    <ul>
+        <!-- Loop through each city in the list passed from the controller -->
+        <li th:each="city : ${cityList}" th:text="${city}"></li>
+    </ul>
+</body>
+</html>
