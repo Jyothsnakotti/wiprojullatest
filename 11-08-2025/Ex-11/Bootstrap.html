@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Product Dashboard - Bootstrap UI</title>
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <style>
+    body { background: linear-gradient(120deg, #eceeef, #dde2ea 70%); }
+    .circle-color { display:inline-block; width:28px; height:28px; border-radius:50%; margin:3px 4px;}
+    .circle-blue { background:#6d85fa;}
+    .circle-orange { background:#fa615c;}
+    .circle-green { background:#44ec7b;}
+    .circle-aqua  { background:#8ee8ed;}
+    .avatar-mini { width:30px; border-radius:50%; border:2px solid #fff;}
+    .avatar-tiny  { width:22px; border-radius:50%; margin-left:-6px; border:2px solid #fff;}
+    .star-rating { color: #f7c846; font-size:1.1rem;}
+    .bg-verylight { background: #f8fafc !important; }
+    .btn-view { background: #d4f770!important; color: #202831; border-radius:1.6em; border: none; }
+    .btn-view:hover { background: #e5fb88; }
+    .card-big { box-shadow:0 2px 13px #e7edf4; border: none;}
+    </style>
+</head>
+<body>
+<div class="container pt-4 pb-3">
+    <!-- Header Bar -->
+    <div class="row align-items-center mb-2">
+        <div class="col-4 col-lg-2 ps-2 fw-bold fs-4">
+            <span style="font-family:sans-serif;letter-spacing:0.5px;">nitec.</span>
+        </div>
+        <div class="col-5 col-lg-6">
+            <div class="input-group">
+                <span class="input-group-text bg-white border-0"><i class="bi bi-search"></i></span>
+                <input type="text" class="form-control border-0 bg-white" placeholder="Search products...">
+                <span class="input-group-text bg-white border-0"><i class="bi bi-arrow-repeat"></i></span>
+            </div>
+        </div>
+        <div class="col-3 col-lg-4 d-flex justify-content-end align-items-center pe-2">
+            <button class="btn btn-light border me-2"><i class="bi bi-bag"></i></button>
+            <button class="btn btn-light border me-2"><i class="bi bi-heart text-danger"></i></button>
+            <span class="fw-bold ms-2">Ryman Alex</span>
+            <img src="https://randomuser.me/api/portraits/men/45.jpg" width="32" class="rounded-circle ms-2" alt="User">
+        </div>
+    </div>
+
+    <!-- Main card and sidebar -->
+    <div class="row mb-4 gy-4 gx-md-4">
+        <!-- Main Product Card -->
+        <div class="col-md-7">
+            <div class="card card-big p-4 bg-verylight rounded-4 position-relative" style="min-height:350px;">
+                <div class="mb-3" style="max-width: 60%;">
+                    <span class="text-secondary small">Music is Classic</span>
+                    <h2 class="fw-bold lh-1 mb-1" style="font-size:2.1rem;">Sequoia Inspiring<br>Musico.</h2>
+                    <div class="fw-semibold text-muted" style="font-size:1.1rem;">Clear Sounds</div>
+                    <div class="mb-2 text-dark" style="font-size:0.98rem;">
+                        Making your dream music come true stay with Sequoia Sounds!
+                    </div>
+                    <a href="#" class="btn btn-view fw-bold px-4 mb-2">View All Products <i class="bi bi-arrow-right ms-2"></i></a>
+                </div>
+                <!-- Headphone image on right side -->
+                <div class="position-absolute top-50 end-0 translate-middle-y" style="right:24px;">
+                    <img src="https://images-na.ssl-images-amazon.com/images/G/02/aplusautomation/vendorimages/fe5dc7f8-6738-42d9-b20d-0120eceef1ec.jpg._CB274416035_.jpg" alt="Blue Headphones" style="width:180px;">
+                </div>
+                <div class="d-flex gap-3 pt-5 mt-4 align-items-center">
+                    <span class="text-secondary small">Follow us on:</span>
+                    <i class="bi bi-twitter text-info"></i>
+                    <i class="bi bi-tiktok"></i>
+                    <i class="bi bi-youtube text-danger"></i>
+                    <i class="bi bi-linkedin text-primary"></i>
+                </div>
+            </div>
+        </div>
+        <!-- Sidebar (right) -->
+        <div class="col-md-5">
+            <div class="row gy-3">
+                <div class="col-12">
+                    <!-- Popular Colors -->
+                    <div class="card p-3 bg-white rounded-4 border-0">
+                        <div class="mb-2 fw-bold ps-1" style="font-size:1.08rem;">Popular Colors</div>
+                        <div>
+                            <span class="circle-color circle-blue"></span>
+                            <span class="circle-color circle-orange"></span>
+                            <span class="circle-color circle-green"></span>
+                            <span class="circle-color circle-aqua"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <!-- New Gen X-Bud -->
+                    <div class="card p-3 bg-white rounded-4 border-0 text-center">
+                        <div class="fw-semibold mb-2" style="font-size:1rem;">New Gen X-Bud</div>
+                        <img src="https://i.imgur.com/ZrDQpYt.png" alt="Earbuds" style="width:70px;border-radius:16px;">
+                    </div>
+                </div>
+                <div class="col-12">
+                    <!-- Light Grey Surface Headphone -->
+                    <div class="card p-3 bg-white rounded-4 border-0 text-center">
+                        <div class="fw-semibold mb-1">Light Grey Surface Headphone</div>
+                        <small class="text-muted mb-2">Boosted with bass</small>
+                        <img src="https://i.imgur.com/ZWi3wKd.png" alt="VR Headphone" style="width:80px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- More products widgets -->
+    <div class="row gx-md-4 gy-3">
+        <!-- More Products -->
+        <div class="col-md-4">
+            <div class="card bg-verylight rounded-4 border-0 p-3">
+                <div class="d-flex align-items-center justify-content-between">
+                    <span class="fw-bold">More Products</span>
+                    <span class="text-danger"><i class="bi bi-heart-fill"></i></span>
+                </div>
+                <div class="text-secondary mt-1">460 plus items.</div>
+                <div class="mt-2 d-flex gap-1">
+                    <img src="https://i.imgur.com/b8fTIVE.png" class="avatar-mini" alt="">
+                    <img src="https://i.imgur.com/ZrDQpYt.png" class="avatar-mini" alt="">
+                    <img src="https://i.imgur.com/ZWi3wKd.png" class="avatar-mini" alt="">
+                </div>
+            </div>
+        </div>
+        <!-- 5m+ Downloads -->
+        <div class="col-md-4">
+            <div class="card bg-verylight rounded-4 border-0 p-3 text-center">
+                <div>
+                    <span class="fw-bold" style="font-size:1.1rem;">5m+ Downloads</span>
+                </div>
+                <div class="mt-2">
+                    <img src="https://images-na.ssl-images-amazon.com/images/G/02/aplusautomation/vendorimages/fe5dc7f8-6738-42d9-b20d-0120eceef1ec.jpg._CB274416035_.jpg" class="avatar-tiny" alt="Headphones">
+                    <img src="https://i.imgur.com/ZWi3wKd.png" class="avatar-tiny" alt="">
+                </div>
+                <div class="mt-2 text-success" style="font-size:0.95rem;">
+                    <i class="bi bi-star-fill star-rating"></i> 4.6 reviews
+                </div>
+            </div>
+        </div>
+        <!-- Listening Has Been Released -->
+        <div class="col-md-4">
+            <div class="card bg-verylight rounded-4 border-0 p-3">
+                <span class="badge bg-warning text-dark mb-1">Popular</span>
+                <div class="fw-bold ms-3 mb-1" style="font-size:1.04rem;">
+                    Listening Has Been Released
+                </div>
+                <div class="d-flex gap-1 mb-2 ms-3">
+                    <img src="https://i.imgur.com/b8fTIVE.png" class="avatar-mini" alt="Avatar">
+                </div>
+                <div class="ms-3">
+                    <span class="star-rating"><i class="bi bi-star-fill"></i> 4.7</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

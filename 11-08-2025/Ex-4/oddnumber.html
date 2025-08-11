@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Positive Odd Number Input</title>
+    <script>
+        function validateOddPositive(input) {
+            let value = parseInt(input.value, 10);
+
+            if (isNaN(value) || value <= 0 || value % 2 === 0) {
+                // Clear the field and inform the user
+                input.value = '';
+                alert("Please enter a positive odd number.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <h3>Enter a positive odd number:</h3>
+    
+    <input type="number" id="oddNumber" min="1" step="1"
+           onblur="validateOddPositive(this)" placeholder="e.g. 1, 3, 5">
+    
+</body>
+</html>

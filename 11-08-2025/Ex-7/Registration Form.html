@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Registration Form</title>
+</head>
+<body style="background-color:#ffe4e1;"> <!-- Light pink background -->
+
+<h2>Student Registration Form</h2>
+
+<form>
+    <label>Roll no. :</label>
+    <input type="text" name="rollno"><br><br>
+
+    <label>Student name :</label>
+    <input type="text" name="firstname" placeholder="First Name">
+    <input type="text" name="lastname" placeholder="Last Name"><br><br>
+
+    <label>Father's name :</label>
+    <input type="text" name="fathername"><br><br>
+
+    <label>Date of birth :</label>
+    <input type="text" name="day" size="2" placeholder="Day">
+    <input type="text" name="month" size="2" placeholder="Month">
+    <input type="text" name="year" size="4" placeholder="Year"> (DD-MM-YYYY)<br><br>
+
+    <label>Mobile no. :</label>
+    <input type="text" value="+91" size="3" readonly>
+    <input type="text" name="mobileno"><br><br>
+
+    <label>Email id :</label>
+    <input type="email" name="email"><br><br>
+
+    <label>Password :</label>
+    <input type="password" name="password"><br><br>
+
+    <label>Gender :</label>
+    <input type="radio" name="gender" value="male"> Male
+    <input type="radio" name="gender" value="female"> Female<br><br>
+
+    <label>Department :</label>
+    <input type="checkbox" name="dept_cse" value="CSE"> CSE
+    <input type="checkbox" name="dept_it" value="IT"> IT
+    <input type="checkbox" name="dept_ece" value="ECE"> ECE
+    <input type="checkbox" name="dept_civil" value="Civil"> Civil
+    <input type="checkbox" name="dept_mech" value="Mech"> Mech<br><br>
+
+    <label>Course :</label>
+    <select name="course">
+        <option>------------------- Select Current Course's -------------------</option>
+        <option value="btech">B.Tech</option>
+        <option value="mtech">M.Tech</option>
+        <option value="bsc">B.Sc</option>
+        <option value="msc">M.Sc</option>
+        <option value="bca">BCA</option>
+        <option value="mca">MCA</option>
+    </select><br><br>
+
+    <label>Student photo :</label>
+    <input type="file" name="photo"><br><br>
+
+    <label>City :</label>
+    <input type="text" name="city"><br><br>
+
+    <label>Address :</label><br>
+    <textarea name="address" rows="3" cols="30"></textarea><br><br>
+
+    <input type="submit" value="Register">
+</form>
+
+</body>
+</html>

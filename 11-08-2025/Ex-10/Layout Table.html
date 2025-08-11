@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML5 Semantic Layout Table</title>
+</head>
+<body>
+
+<table border="1" cellpadding="8" cellspacing="0" align="center">
+    <!-- Header row -->
+    <tr>
+        <td colspan="3" align="center">&lt;header&gt;</td>
+    </tr>
+    <!-- Nav row -->
+    <tr>
+        <td colspan="3" align="center">&lt;nav&gt;</td>
+    </tr>
+    <!-- Main content area -->
+    <tr>
+        <!-- Aside -->
+        <td rowspan="5" align="center" valign="top" width="140">&lt;aside&gt;</td>
+        <!-- Main wraps everything in the right section -->
+        <td colspan="2" align="center">&lt;main&gt;</td>
+    </tr>
+    <tr>
+        <!-- Article as a separate box -->
+        <td align="center" colspan="2">
+            <table border="1" width="100%" cellpadding="5" cellspacing="0">
+                <tr>
+                    <td align="center">&lt;article&gt;</td>
+                </tr>
+                <tr>
+                    <td>
+                        <table border="1" width="100%">
+                            <tr>
+                                <td align="center">&lt;figure&gt;</td>
+                            </tr>
+                            <tr>
+                                <td align="center">&lt;p&gt;</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <!-- Section after article -->
+        <td colspan="2" align="center">&lt;section&gt;</td>
+    </tr>
+    <!-- Spacer row for layout similarity -->
+    <tr>
+        <td colspan="2"></td>
+    </tr>
+    <!-- Footer -->
+    <tr>
+        <td colspan="3" align="center">&lt;footer&gt;</td>
+    </tr>
+</table>
+
+</body>
+</html>
