@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Flexbox Reference Layout</title>
+  <style>
+    body {
+      background: #e6f0fa;
+      font-family: 'Segoe UI', Arial, sans-serif;
+    }
+    .amazon-layout {
+      display: flex;
+      gap: 40px;
+      max-width: 1100px;
+      margin: 40px auto;
+    }
+    .section {
+      background: white;
+      box-shadow: 0 2px 10px #abd5fa55;
+      border-radius: 16px;
+      width: 480px;
+      padding: 28px 28px 20px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .section h2 {
+      font-size: 1.6rem;
+      margin-bottom: 12px;
+    }
+    .item-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .item {
+      width: 47%;
+      background: #f6f8fa;
+      border-radius: 8px;
+      padding: 10px 8px 14px 8px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 158px;
+      box-sizing: border-box;
+      box-shadow: 0 1px 3px #ddd;
+    }
+    .item img {
+      max-width: 85px;
+      max-height: 85px;
+      margin-bottom: 10px;
+      object-fit: contain;
+      border-radius: 5px;
+      background: #fff;
+    }
+    .item-title {
+      font-size: 1rem;
+      text-align: center;
+      margin-bottom: 0px;
+      color: #222b;
+      font-weight: 600;
+      min-height: 44px;
+    }
+    .browse {
+      text-align: right;
+      font-size: 0.98rem;
+      margin-top: 8px;
+      color: #1a73e8;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+    @media(max-width: 900px) {
+      .amazon-layout { flex-direction: column; align-items: center; }
+      .section { width: 95vw; max-width: 480px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="amazon-layout">
+
+    <!-- Left Section: Pick up where you left off -->
+    <div class="section">
+      <h2>Pick up where you left off</h2>
+      <div class="item-grid">
+        <div class="item">
+          <img src="https://www.jiomart.com/images/product/150x150/rvvg3wjqfx/xtrim-macho-x-unisex-leather-gym-gloves-for-professional-weightlifting-fitness-training-and-workout-with-half-finger-length-wrist-wrap-for-protection-product-images-orvvg3wjqfx-p597688931-0-202301182222.jpg" alt="XTRIM X-Macho Leather Gloves" />
+          <div class="item-title">XTRIM X-Macho Leather</div>
+        </div>
+        <div class="item">
+          <img src="https://images-eu.ssl-images-amazon.com/images/I/71M-SPOa4tL._AC_UL165_SR165,165_.jpg" alt="Kobo WTG-05 Leather Gloves" />
+          <div class="item-title">Kobo WTG-05 Leather</div>
+        </div>
+        <div class="item">
+          <img src="https://tse2.mm.bing.net/th/id/OIP.2k_5b--DVIN7ExFFYgUA9gHaHZ?pid=Api&P=0&h=220" alt="19.ten Leather Gym Gloves" />
+          <div class="item-title">19.ten Leather Gym Gloves</div>
+        </div>
+        <div class="item">
+          <img src="https://m.media-amazon.com/images/I/514qXNC3aeL._SL1000_.jpg" alt="BROGBUS Neoprene Wrist Wraps" />
+          <div class="item-title">BROGBUS Neoprene Wrist Wraps</div>
+        </div>
+      </div>
+      <div class="browse">See more</div>
+    </div>
+
+    <!-- Right Section: Keep shopping for -->
+    <div class="section">
+      <h2>Keep shopping for</h2>
+      <div class="item-grid">
+        <div class="item">
+          <img src="https://tse2.mm.bing.net/th/id/OIP.BQhwKHwVYvkFSiV6jwk_RAHaHj?pid=Api&P=0&h=220" alt="Smartphone" />
+          <div class="item-title">Smartphones & basics</div>
+        </div>
+        <div class="item">
+          <img src="https://tse2.mm.bing.net/th/id/OIP.7S4EdVtyQT1hQfu8MDa4bQHaJ3?pid=Api&P=0&h=220" alt="Women's red kurta" />
+          <div class="item-title">Women's kurtas</div>
+        </div>
+        <div class="item">
+          <img src="https://tse1.mm.bing.net/th/id/OIP.h-uewt0GkWqi8sDSofoEggHaHa?pid=Api&P=0&h=220" alt="Men's beard & moustache trimmers" />
+          <div class="item-title">Men's beard & moustache trimmers</div>
+        </div>
+        <div class="item">
+          <img src="https://m.media-amazon.com/images/I/61G6EDWjgaL._AC_SL1500_.jpg" alt="Induction cooktop" />
+          <div class="item-title">Induction cooktops</div>
+        </div>
+      </div>
+      <div class="browse">View your browsing history</div>
+    </div>
+
+  </div>
+</body>
+</html>

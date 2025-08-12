@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Ex12 - Enhanced E-Commerce Website</title>
+<style>
+/* --- GLOBAL --- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.65;
+    background: #f0f7fa;
+    color: #222;
+    background: linear-gradient(135deg, #cceeff 0%, #f0fbff 100%);
+    min-height: 100vh;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+    font-weight: 600;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+a:hover, a:focus {
+    color: #004d66;
+    text-shadow: 0 0 8px #00aaff99;
+    outline: none;
+}
+/* --- NAVIGATION --- */
+header {
+    background: linear-gradient(90deg, #0077b6, #00a7a7);
+    color: #fff;
+    padding: 1.2rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    box-shadow: 0 5px 18px rgba(0, 160, 160, 0.6);
+    border-bottom: 4px solid #00d4d4;
+}
+nav {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1.5rem;
+}
+nav .logo h1 {
+    font-size: 1.9rem;
+    letter-spacing: 3px;
+    text-shadow: 0 0 15px #00ffffa8, 0 0 30px #00d4d4a8;
+    user-select: none;
+}
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+nav ul li a {
+    font-size: 1.1rem;
+    padding: 6px 12px;
+    border-radius: 10px;
+    user-select: none;
+    box-shadow: inset 0 0 0 0 transparent;
+}
+nav ul li a:hover,
+nav ul li a:focus {
+    background: #00d4d4;
+    color: #003f44;
+    box-shadow: 0 0 15px #00d4d4cc;
+    outline: none;
+}
+/* --- HOME SECTION --- */
+section {
+    max-width: 1100px;
+    margin: 2rem auto;
+    padding: 1rem 1.5rem;
+}
+#home {
+    background: url('https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+    color: white;
+    padding: 6rem 2rem 7rem;
+    border-radius: 16px;
+    box-shadow: inset 0 0 0 2200px rgba(0, 0, 0, 0.35);
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    user-select: none;
+    text-shadow: 0 0 20px rgba(0, 255, 255, 0.7);
+}
+#home h2 {
+    font-size: 3.6rem;
+    margin-bottom: 0.7rem;
+}
+#home p {
+    font-size: 1.3rem;
+    max-width: 640px;
+    margin: auto;
+    text-shadow: 0 0 20px rgba(0, 255, 255, 0.9);
+}
+/* --- PRODUCTS --- */
+.products-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.8rem;
+    justify-content: center;
+}
+.product {
+    flex: 1 1 230px;
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 167, 167, 0.2);
+    padding: 1rem 1rem 1.7rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: box-shadow 0.4s ease, transform 0.35s ease;
+}
+.product:focus-within,
+.product:hover {
+    box-shadow: 0 15px 40px rgba(0, 212, 212, 0.55);
+    transform: translateY(-7px);
+    outline: none;
+}
+.product img {
+    width: 100%;
+    height: 180px;
+    object-fit: contain;
+    margin-bottom: 1.2rem;
+    border-radius: 12px;
+    filter: drop-shadow(0 0 0.8rem #00a7a7aa);
+    transition: filter 0.3s ease;
+}
+.product:hover img {
+    filter: drop-shadow(0 0 1.3rem #00fff7);
+}
+.product h3 {
+    font-weight: 700;
+    color: #007f7f;
+    margin-bottom: 0.4rem;
+    text-align: center;
+    user-select: text;
+    font-size: 1.2rem;
+}
+.product p {
+    font-weight: 700;
+    color: #004040;
+    font-size: 1.15rem;
+    user-select: text;
+    margin-bottom: 1.1rem;
+}
+.btn {
+    padding: 0.55rem 1.6rem;
+    border-radius: 30px;
+    background: linear-gradient(135deg, #00a7a7, #0077b6);
+    color: white;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    text-align: center;
+    user-select: none;
+    box-shadow: 0 8px 25px rgba(0, 184, 184, 0.75);
+    border: none;
+    transition: background 0.4s ease, box-shadow 0.3s ease, transform 0.25s ease;
+}
+.btn:hover,
+.btn:focus {
+    background: linear-gradient(135deg, #00d4d4, #005f77);
+    box-shadow: 0 16px 48px rgba(0, 212, 212, 0.85);
+    transform: scale(1.1);
+    outline: none;
+}
+/* --- CART SECTION --- */
+#cart {
+    margin-top: 3rem;
+}
+.cart-container {
+    background: #e0ffffdd;
+    padding: 2rem;
+    border-radius: 18px;
+    box-shadow: 0 12px 35px rgba(0, 160, 160, 0.3);
+}
+.cart-item {
+    font-size: 1.2rem;
+    font-weight: 700;
+    display: flex;
+    justify-content: space-between;
+    padding: 1.2rem 0;
+    border-bottom: 2px solid #00cacaaa;
+    color: #004747;
+    user-select: text;
+}
+.checkout {
+    text-align: right;
+    margin-top: 1.8rem;
+}
+.checkout .btn {
+    background: #0077b6;
+    font-size: 1.1rem;
+    padding: 0.9rem 2.1rem;
+    box-shadow: 0 10px 32px rgba(0, 119, 182, 0.7);
+}
+.checkout .btn:hover {
+    background: #005f77;
+}
+/* --- ABOUT AND CONTACT --- */
+#about, #contact {
+    background: white;
+    border-radius: 18px;
+    padding: 3rem 3.5rem;
+    box-shadow: 0 12px 35px rgba(0, 167, 167, 0.25);
+    margin-top: 3rem;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+input, textarea {
+    padding: 1rem;
+    border: 2px solid #00a7a7;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    outline: none;
+    transition: border-color 0.4s ease, box-shadow 0.35s ease;
+}
+input:focus, textarea:focus {
+    border-color: #004f4f;
+    box-shadow: 0 0 14px #008f8fcc;
+}
+form .btn {
+    width: fit-content;
+    background: linear-gradient(135deg, #0077b6, #00a7a7);
+    color: white;
+    font-weight: 800;
+    border-radius: 30px;
+    padding: 1rem 2.6rem;
+    cursor: pointer;
+    transition: background 0.4s ease, box-shadow 0.35s ease;
+    user-select: none;
+    font-size: 1.15rem;
+}
+form .btn:hover, form .btn:focus {
+    background: linear-gradient(135deg, #00d4d4, #005f77);
+    box-shadow: 0 12px 36px rgba(0, 212, 212, 0.75);
+    outline: none;
+}
+/* --- FOOTER --- */
+footer {
+    background: linear-gradient(90deg, #0077b6, #00a7a7);
+    color: white;
+    text-align: center;
+    padding: 1.5rem 1rem;
+    font-size: 1.05rem;
+    box-shadow: 0 -5px 35px rgba(0,184,184,0.75);
+    letter-spacing: 0.06em;
+    user-select: none;
+    font-weight: 700;
+    margin-top: 4rem;
+}
+@media(max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .products-container {
+        justify-content: center;
+    }
+    #about, #contact {
+        padding: 2rem 2rem;
+        margin-top: 2rem;
+    }
+}
+</style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<header>
+    <nav>
+        <div class="logo" aria-label="Company logo"><h1>MyStore</h1></div>
+        <ul role="menubar">
+            <li role="none"><a href="#home" role="menuitem" tabindex="0">Home</a></li>
+            <li role="none"><a href="#products" role="menuitem" tabindex="0">Products</a></li>
+            <li role="none"><a href="#cart" role="menuitem" tabindex="0">Cart</a></li>
+            <li role="none"><a href="#about" role="menuitem" tabindex="0">About</a></li>
+            <li role="none"><a href="#contact" role="menuitem" tabindex="0">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- HOME -->
+<section id="home" role="banner">
+    <h2>Welcome to MyStore</h2>
+    <p>Your one-stop online shop for quality products at amazing prices. Experience fast shipping, secure checkout, and premium customer service designed just for you.</p>
+</section>
+
+<!-- PRODUCTS -->
+<section id="products" role="region" aria-labelledby="products-title">
+    <h2 id="products-title">Our Products</h2>
+    <div class="products-container" aria-label="Product listing">
+        <div class="product" tabindex="0" aria-labelledby="product1-name product1-price">
+            <img src="https://m.media-amazon.com/images/I/61q+RT4CybS._AC_SL1500_.jpg" alt="Wireless Headphones" />
+            <h3 id="product1-name">Wireless Headphones</h3>
+            <p id="product1-price">₹4,599</p>
+            <a href="#cart" class="btn" role="button" aria-label="Add Wireless Headphones to Cart">Add to Cart</a>
+        </div>
+        <div class="product" tabindex="0" aria-labelledby="product2-name product2-price">
+            <img src="https://cdn.mos.cms.futurecdn.net/DxpaKaHPBL5yF8vBjh2MjX.jpg" alt="Smart Watch" />
+            <h3 id="product2-name">Smart Watch</h3>
+            <p id="product2-price">₹8,499</p>
+            <a href="#cart" class="btn" role="button" aria-label="Add Smart Watch to Cart">Add to Cart</a>
+        </div>
+        <div class="product" tabindex="0" aria-labelledby="product3-name product3-price">
+            <img src="https://tse3.mm.bing.net/th/id/OIP.hSbtnufimM7YA11Jk2HxpAHaER?pid=Api&P=0&h=220" alt="Bluetooth Speaker" />
+            <h3 id="product3-name">Bluetooth Speaker</h3>
+            <p id="product3-price">₹2,199</p>
+            <a href="#cart" class="btn" role="button" aria-label="Add Bluetooth Speaker to Cart">Add to Cart</a>
+        </div>
+        <div class="product" tabindex="0" aria-labelledby="product4-name product4-price">
+            <img src="https://5.imimg.com/data5/SELLER/Default/2021/9/EG/ZA/KQ/136393597/artis-falcon-optical-gaming-mouse-1000x1000.jpg" alt="Gaming Mouse" />
+            <h3 id="product4-name">Gaming Mouse</h3>
+            <p id="product4-price">₹1,299</p>
+            <a href="#cart" class="btn" role="button" aria-label="Add Gaming Mouse to Cart">Add to Cart</a>
+        </div>
+    </div>
+</section>
+
+<!-- CART -->
+<section id="cart" aria-live="polite" aria-label="Shopping cart items">
+    <h2>Your Shopping Cart</h2>
+    <div class="cart-container">
+        <div class="cart-item">
+            <span>Wireless Headphones</span>
+            <span>₹4,599</span>
+        </div>
+        <div class="cart-item">
+            <span>Smart Watch</span>
+            <span>₹8,499</span>
+        </div>
+        <div class="checkout">
+            <strong>Total: ₹13,098</strong><br><br>
+            <a href="#checkout" class="btn" role="button" aria-label="Proceed to Checkout">Proceed to Checkout</a>
+        </div>
+    </div>
+</section>
+
+<!-- CHECKOUT FORM -->
+<section id="checkout" aria-label="Checkout form">
+    <h2>Checkout</h2>
+    <form>
+        <input type="text" placeholder="Full Name" required aria-label="Full Name" />
+        <input type="email" placeholder="Email Address" required aria-label="Email Address" />
+        <input type="text" placeholder="Shipping Address" required aria-label="Shipping Address" />
+        <input type="text" placeholder="City" required aria-label="City" />
+        <input type="text" placeholder="Zip Code" required aria-label="Zip Code" />
+        <button type="submit" class="btn" aria-label="Place Order">Place Order</button>
+    </form>
+</section>
+
+<!-- ABOUT -->
+<section id="about" aria-label="About us">
+    <h2>About Us</h2>
+    <p>MyStore was founded with a passion for bringing premium quality products directly to your doorstep at unbeatable prices. Our mission is to offer a seamless and trustworthy shopping experience with lightning-fast delivery and dedicated customer care. From tech gadgets to lifestyle essentials, we curate our collection to ensure only the best for our customers.</p>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" aria-label="Contact form">
+    <h2>Contact Us</h2>
+    <form>
+        <input type="text" placeholder="Your Name" required aria-label="Your Name" />
+        <input type="email" placeholder="Email Address" required aria-label="Email Address" />
+        <textarea placeholder="Your Message" rows="5" required aria-label="Your Message"></textarea>
+        <button type="submit" class="btn" aria-label="Send Message">Send Message</button>
+    </form>
+</section>
+
+<!-- FOOTER -->
+<footer role="contentinfo">
+    <p>© 2025 MyStore. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

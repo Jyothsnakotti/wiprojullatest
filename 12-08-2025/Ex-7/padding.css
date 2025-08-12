@@ -1,0 +1,12 @@
+.text-box {
+    width: 300px;
+    height: 150px;
+    background-color: lightblue;
+    border: 2px solid navy;
+
+    padding: 20px;
+
+    /* Margin moves the entire box from its default position */
+    margin-left: 100px; /* moves the div to the right */
+    margin-top: 50px;   /* moves the div down */
+}
