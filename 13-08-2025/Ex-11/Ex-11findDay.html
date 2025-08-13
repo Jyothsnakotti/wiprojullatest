@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Ex11 - Find Day of a Date</title>
+</head>
+<body>
+    <h1>Ex11: Find Day of August 13, 2030</h1>
+    <p>Open the console to see which day this date falls on.</p>
+
+    <script>
+        // Create Date object for August 13, 2030 (Month is 0-indexed, so 7 means August)
+        const date = new Date(2030, 7, 13);
+
+        // Array of weekday names
+        const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+        // Get the day index from date (0=Sunday, 1=Monday, ...)
+        const dayIndex = date.getDay();
+
+        // Get day name
+        const dayName = days[dayIndex];
+
+        console.log("The date August 13, 2030 falls on a:", dayName);
+    </script>
+</body>
+</html>
