@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Ex-4 Bank Account</title>
+</head>
+<body>
+  <h2>Ex-4: Bank Account</h2>
+
+  <p>
+    Account Number: <input id="accNumber" type="text" placeholder="Enter account number">
+  </p>
+  <p>
+    Initial Balance: <input id="initBalance" type="number" placeholder="Enter initial balance">
+  </p>
+  <button onclick="createAccount()">Create Account</button>
+  <p id="accountStatus"></p>
+
+  <hr>
+
+  <p>
+    Deposit Amount: <input id="depositAmount" type="number">
+    <button onclick="depositMoney()">Deposit</button>
+  </p>
+
+  <p>
+    Withdraw Amount: <input id="withdrawAmount" type="number">
+    <button onclick="withdrawMoney()">Withdraw</button>
+  </p>
+
+  <p id="balanceDisplay"></p>
+
+  <script src="Ex-4.js"></script>
+</body>
+</html>
