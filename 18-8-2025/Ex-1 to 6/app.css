@@ -1,0 +1,11 @@
+.my-box {
+  background-color: lightblue;
+  color: darkblue;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  padding: 20px;
+  margin: 50px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px gray;
+}

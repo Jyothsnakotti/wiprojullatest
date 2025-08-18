@@ -1,0 +1,7 @@
+/* You can add global styles to this file, and also import other style files */
+@media (min-width: 768px) {
+  .row .col-2 {
+    max-width: 20%;
+    flex: 0 0 20%;
+  }
+}
