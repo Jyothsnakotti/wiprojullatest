@@ -1,0 +1,178 @@
+/* Container Setup */
+.container {
+  max-width: 720px;
+  margin: 40px auto;
+  background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+  border-radius: 14px;
+  box-shadow: 0 12px 28px rgba(46, 86, 204, 0.3);
+  padding: 30px 35px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #1a2533;
+  user-select: none;
+}
+
+/* Main Heading */
+h2 {
+  font-weight: 900;
+  font-size: 2.8rem;
+  color: #1b2e5b;
+  text-align: center;
+  letter-spacing: 2px;
+  margin-bottom: 35px;
+  text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.7);
+}
+
+/* Add Task Section */
+.add-task-box {
+  background: #ffffffdd;
+  border-radius: 10px;
+  padding: 25px 30px;
+  box-shadow: 0 6px 16px rgba(112, 144, 208, 0.25);
+  transition: box-shadow 0.3s ease;
+}
+.add-task-box:hover {
+  box-shadow: 0 10px 24px rgba(46, 86, 204, 0.5);
+}
+
+/* Labels & Inputs */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+label {
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #324a75;
+  font-size: 1.05rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  user-select: text;
+}
+
+input[type="text"],
+select {
+  border-radius: 9px;
+  border: 2px solid #aab9d4;
+  background: #f9fbff;
+  padding: 12px 14px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #3b4a6b;
+  transition: all 0.35s ease;
+  box-shadow: inset 2px 2px 5px #ffffff,
+              inset -2px -2px 5px #c1cdfa;
+  outline: none;
+}
+
+input[type="text"]:focus,
+select:focus {
+  border-color: #2e56cc;
+  box-shadow: 0 0 10px 3px rgba(46, 86, 204, 0.6);
+  background: #eaf2ff;
+  color: #1a2533;
+}
+
+/* Add Button */
+.btn-success {
+  background: linear-gradient(90deg, #3a62dd 0%, #2e56cc 100%);
+  border: none;
+  color: white;
+  font-weight: 700;
+  font-size: 1.15rem;
+  padding: 14px 32px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+  user-select: none;
+  align-self: flex-start;
+  box-shadow: 0 5px 8px rgba(46, 86, 204, 0.5);
+}
+
+.btn-success:hover {
+  box-shadow: 0 8px 18px rgba(46, 86, 204, 0.8);
+  transform: translateY(-3px);
+}
+
+/* Table Styling */
+.table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 12px;
+  margin-bottom: 25px;
+  table-layout: fixed;
+  font-size: 1rem;
+  color: #243a6e;
+}
+
+thead {
+  background-color: transparent;
+}
+
+th {
+  font-weight: 700;
+  padding: 14px 15px;
+  color: #324a75;
+  text-align: left;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  border-bottom: 2px solid #94a8d7;
+}
+
+tbody tr {
+  background: #e8f0ff;
+  border-radius: 14px;
+  box-shadow: 0 5px 15px rgba(80, 114, 224, 0.15);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+  user-select: text;
+}
+
+tbody tr:hover {
+  background: #c6dbff;
+  box-shadow: 0 9px 30px rgba(46, 86, 204, 0.5);
+}
+
+/* Table Cells */
+td {
+  padding: 12px 15px;
+  vertical-align: middle;
+  word-wrap: break-word;
+  border: none;
+}
+
+/* Delete Button */
+.btn-danger {
+  background: linear-gradient(45deg, #e74c3c, #c0392b);
+  border: none;
+  color: white;
+  padding: 8px 18px;
+  font-weight: 700;
+  border-radius: 10px;
+  cursor: pointer;
+  user-select: none;
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+  font-size: 1rem;
+}
+
+.btn-danger:hover {
+  box-shadow: 0 6px 20px rgba(199, 35, 45, 0.9);
+  transform: translateY(-2px);
+}
+
+/* Responsive improvements */
+@media only screen and (max-width: 600px) {
+  .container {
+    max-width: 100%;
+    margin: 20px 12px;
+    padding: 20px 18px;
+  }
+  .btn-success, .btn-danger {
+    width: 100%;
+    padding: 12px 0;
+  }
+  .form-group {
+    margin-bottom: 15px;
+  }
+}
