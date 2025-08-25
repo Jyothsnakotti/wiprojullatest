@@ -1,0 +1,14 @@
+<div class="container mt-4">
+  <h2>Fruit Gallery</h2>
+  <div class="row">
+    <div class="col-md-4 mb-4" *ngFor="let fruit of fruits">
+      <fruit [fruit]="fruit" (remove)="onRemoveFruit($event)"></fruit>
+      <div class="know-more-box mt-2 p-2 text-center">
+        <p>Price: ₹{{ fruit.price }}</p>
+        <button class="btn btn-primary btn-sm" (click)="onKnowMore(fruit.name)">
+          Know More
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

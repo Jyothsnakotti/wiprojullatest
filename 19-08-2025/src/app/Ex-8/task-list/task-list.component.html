@@ -1,0 +1,12 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>Task Description</th>
+      <th>Category</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <task *ngFor="let task of tasks" [task]="task" (delete)="handleDelete($event)"></task>
+  </tbody>
+</table>
