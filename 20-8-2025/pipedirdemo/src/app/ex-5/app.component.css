@@ -1,0 +1,22 @@
+/* Center the container and add some padding and background */
+
+:host {
+  display: block;
+  padding: 20px;
+  background-color: #f5f8fa;
+  min-height: 100vh;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #1a2533;
+}
+
+/* Optional: style the embedded component container */
+
+div {
+  max-width: 740px;
+  margin: 0 auto;
+  background: white;
+  box-shadow: 0 6px 18px rgba(46, 86, 204, 0.1);
+  border-radius: 10px;
+  padding: 25px;
+}
