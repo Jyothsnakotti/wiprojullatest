@@ -1,0 +1,23 @@
+<div class="card">
+  <h2>Search Results</h2>
+
+  <div *ngIf="flights().length === 0">
+    No Flights available
+  </div>
+
+  <div *ngFor="let f of flights()" 
+       class="row" 
+       style="justify-content:space-between; align-items:center; margin:8px 0; padding:8px; border-bottom:1px solid #ddd;">
+       
+    <div>
+      <strong>{{ f.airline }} {{ f.flightNo }}</strong> — ₹{{ f.price }}
+      <br />
+      <small>
+        {{ f.source }} {{ f.departTime }} ➝ {{ f.destination }} {{ f.arriveTime }}
+        ({{ f.durationMins }} mins, {{ f.stops === 0 ? 'Non-stop' : f.stops + ' stop(s)' }})
+      </small>
+    </div>
+
+    <a class="btn btn-outline" [routerLink]="['/booking', f.id]">Book</a>
+  </div>
+</div>

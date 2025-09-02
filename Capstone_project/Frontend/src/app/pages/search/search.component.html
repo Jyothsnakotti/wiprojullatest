@@ -1,0 +1,33 @@
+<div class="card">
+  <h2>Search Flights</h2>
+
+  <div>
+    <label>Source</label>
+    <select [(ngModel)]="source">
+      <option value="" disabled selected>Select Source</option>
+      <option *ngFor="let city of cities" [value]="city">{{ city }}</option>
+    </select>
+  </div>
+
+  <div>
+    <!-- Swap Button -->
+    <button type="button" class="btn btn-secondary" (click)="swapCities()">⇄ Swap</button>
+  </div>
+
+  <div>
+    <label>Destination</label>
+    <select [(ngModel)]="destination">
+      <option value="" disabled selected>Select Destination</option>
+      <option *ngFor="let city of cities" [value]="city">{{ city }}</option>
+    </select>
+  </div>
+
+  <div>
+    <label>Date</label>
+    <input type="date" [(ngModel)]="date" />
+  </div>
+
+  <button class="btn btn-primary" (click)="onSearch()">Search</button>
+</div>
+
+<p *ngIf="msg" class="error">{{ msg }}</p>

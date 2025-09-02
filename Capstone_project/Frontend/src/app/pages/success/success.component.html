@@ -1,0 +1,14 @@
+<div class="card" *ngIf="booking; else ns">
+  <h2>✅ Payment Successful</h2>
+  <p>Txn: {{ booking?.payment?.txnId }} — Card •••• {{ booking?.payment?.cardLast4 }}</p>
+  <p>Eticket generated for <b>{{ booking?.name }}</b> (Booking ID: {{ booking?.id }})</p>
+  
+  <!-- ✅ Show PNR -->
+  <p><b>PNR:</b> {{ booking?.pnr }}</p>
+
+  <a class="btn btn-outline" routerLink="/">Book another flight</a>
+</div>
+
+<ng-template #ns>
+  <p>No booking found.</p>
+</ng-template>

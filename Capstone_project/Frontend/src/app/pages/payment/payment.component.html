@@ -1,0 +1,23 @@
+<div class="card" *ngIf="booking; else nb">
+  <h2>Payment</h2>
+  <p>Booking: {{ booking?.id }} — ₹{{ booking?.amount }}</p>
+
+  <label>Card Number</label>
+  <input [(ngModel)]="cardNumber" placeholder="1234567812345678" />
+
+  <label>Expiry (MM/YY)</label>
+  <input [(ngModel)]="expiry" placeholder="09/27" />
+
+  <label>CVV</label>
+  <input [(ngModel)]="cvv" placeholder="123" />
+
+  <button class="btn btn-primary"
+    (click)="pay()"
+    [disabled]="!validCard || !validExpiry || !validCvv">
+    Pay Now
+  </button>
+</div>
+
+<ng-template #nb>
+  <p>No active booking. Please start again.</p>
+</ng-template>

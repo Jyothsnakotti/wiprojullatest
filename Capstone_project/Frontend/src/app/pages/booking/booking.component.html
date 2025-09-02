@@ -1,0 +1,31 @@
+<div class="card">
+  <h2>Booking Details</h2>
+  <form (ngSubmit)="proceed()">
+    <label>Name</label>
+    <input [(ngModel)]="name" name="name" required>
+
+    <label>Email</label>
+    <input [(ngModel)]="email" name="email" type="email" required>
+
+    <label>Phone</label>
+    <input [(ngModel)]="phone" name="phone" required>
+
+    <label>Gender</label>
+    <select [(ngModel)]="gender" name="gender">
+      <option value="MALE">Male</option>
+      <option value="FEMALE">Female</option>
+      <option value="OTHER">Other</option>
+    </select>
+
+    <label>Age</label>
+    <input [(ngModel)]="age" name="age" type="number" min="1" required> <!-- 👈 Added -->
+
+    <label>Seat Class</label>
+    <select [(ngModel)]="seatClass" name="seatClass">
+      <option value="ECONOMY">Economy</option>
+      <option value="BUSINESS">Business</option>
+    </select>
+
+    <button class="btn btn-primary" type="submit">Proceed to Payment</button>
+  </form>
+</div>
